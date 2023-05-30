@@ -1,0 +1,186 @@
+.MyRecipeProfileSectiom {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  justify-content: space-around;
+  margin: auto;
+  padding-top: 30px;
+  height: 50vh;
+  overflow-y: scroll;
+  gap: 2vw;
+}
+.UserHeaderCardEditDelete{
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+.MyRecipeProfileSectiom::-webkit-scrollbar {
+  display: none;
+}
+.MyRecipeCard {
+  width: 200px;
+  height: 250px;
+  border: 4px solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+.MyRecipeCard:hover {
+  cursor: pointer;
+}
+.MyRecipeCardTitle {
+  padding: 5px;
+}
+.MyRecipeCardImage {
+  border-bottom: 4px solid;
+  width: 200px;
+  height: 200px;
+}
+
+.profileCard{
+  height: 50vh;
+}
+
+.profileCardContent{
+  height: 47vh;
+}
+.profileCardImage{
+  height: 50vh;
+
+}
+.deletePopup {
+  height: 199px;
+  width: 50vw;
+  margin-top: 10vh;
+}
+
+
+.deletePopupContent {
+    display: flex;
+    flex-direction: column;
+    height: 178px;
+    padding: 10px;
+    justify-content: space-between;
+}
+.deletePopupContent div{
+  display: flex;
+  align-self: flex-end;
+  width: 150px;
+  justify-content: space-between;
+}
+.yes{
+  color: green;
+  border:4px green solid;
+}
+@media only screen and (max-width: 1300px) {
+  .MyRecipeProfileSectiom {
+    width: 700px;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .MyRecipeProfileSectiom {
+    width: 500px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .MyRecipeProfileSectiom {
+    width: 700px;
+  }
+  
+}
+
+@media only screen and (max-width: 725px) {
+  .MyRecipeProfileSectiom {
+    width: 500px;
+  }
+}
+@media only screen and (max-width: 540px) {
+
+.profileCardContent{
+  height: 20vh;
+}
+.profileCardImage{
+  height: 28vh;
+  
+}}
+@media only screen and (max-width: 500px) {
+  .MyRecipeProfileSectiom {
+    width: 400px;
+
+  }
+  .MyRecipeCard {
+    width: 180px;
+  }
+  .MyRecipeCardImage {
+    width: 180px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .MyRecipeProfileSectiom {
+    margin-top: 10px;
+    width: 350px;
+    gap: 0.5;
+    justify-content: center;
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .MyRecipeCard {
+    width: 95px;
+    height: 130px;
+    border: 2px solid;
+    border-radius: 1px;
+  }
+  .MyRecipeCardImage {
+    width: 95px;
+    height: 100px;
+  }
+  .profileCard {
+    width: 49vh;
+    margin-bottom: 100px;
+}
+.profileCardImage {
+  height: 26.5vh;
+  width: 49vh;
+}
+.UserHeaderCardEditDelete {
+  width: 181px;
+}
+.deletePopup {
+ margin-left: 30px;
+}
+}
+
+@media only screen and (max-width: 360px) {
+  .MyRecipeProfileSectiom {
+    margin-top: 10px;
+    width: 310px;
+    gap: 0.5;
+    justify-content: center;
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .MyRecipeCard {
+    width: 95px;
+    height: 130px;
+    border: 2px solid;
+    border-radius: 1px;
+  }
+  .MyRecipeCardImage {
+    width: 95px;
+    height: 100px;
+  }
+  .profileCard {
+    width: 302px;
+    margin-bottom: 100px;
+}
+.profileCardImage {
+  width: 302px;
+}
+.UserHeaderCardEditDelete {
+  width: 181px;
+}
+}

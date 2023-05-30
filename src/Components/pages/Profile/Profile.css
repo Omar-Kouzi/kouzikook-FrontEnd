@@ -1,0 +1,245 @@
+.ProfilePage {
+  width: 83.2vw;
+  height: 100vh;
+}
+.ProfileHeader {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 200px;
+}
+.ProfileHeaderImageName {
+  display: flex;
+  align-items: center;
+  width: 49vw;
+  justify-content: space-around;
+}
+.ProfilePicture {
+  border-radius: 50%;
+  height: 170px;
+  width: 170px;
+  border: 5px solid;
+}
+.NameFollowingFollowersHeader {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.FollowingFollowersHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 230px;
+}
+.FollowingFollowersHeader {
+  cursor: pointer;
+}
+.FollowingFollowersHeader div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+}
+
+.ProfileHeaderButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 170px;
+  width: 200px;
+}
+.ProfileHeaderButtons a {
+  padding: 10px;
+  border-radius: 5px;
+  border: 4px solid;
+  width: 150px;text-align: center;
+}
+.ProfileNavigator {
+  display: flex;
+  flex-direction: row;
+}
+.ProfileNavigator:hover {
+  cursor: pointer;
+}
+.ProfileNavigator a {
+  border-top: 4px solid;
+  width: 100%;
+  border-radius: 0;
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+  padding: 10px;
+  text-align: center;
+}
+
+.ProfilePopup {
+  border: 4px solid;
+  position: absolute;
+  height: 100vh;
+  background-color: #ffffff;
+  width: 79.8vw;
+  min-width: 250px;
+  border-radius: 5px;
+  margin-bottom: 80vh;
+  top: 0;
+  object-fit: cover;
+}
+.ProfilePopup-enter {
+  opacity: 0;
+}
+
+.ProfilePopup-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ProfilePopup-exit {
+  opacity: 1;
+}
+
+.ProfilePopup-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.Following-FollowersHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  align-items: center;
+}
+.Following-FollowersProfilePopupCard div {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  padding-top: 8px;
+}
+.Following-FollowersProfilePopupCard p {
+  padding: 5px 15px;
+}
+.Following-FollowersProfilePopupCards {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 449px;
+}
+.Following-FollowersProfilePopupCards::-webkit-scrollbar {
+  display: none;
+}
+.ProfileEditHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  align-items: center;
+}
+.ProfileeditForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  height: 50vh;
+}
+.ProfileeditForm input {
+  border: 3px solid;
+  padding: 5px;
+}
+.ProfileeditForm input:focus {
+  border: 4px solid;
+}
+
+@media only screen and (max-width: 1300px) {
+  .ProfilePopup {
+    width: 75vw;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .ProfilePopup {
+    width: 73.8vw;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .ProfilePopup {
+    width: 72.2vw;
+  }
+}
+@media only screen and (max-width: 1040px) {
+  .ProfilePopup {
+    width: 69.8vw;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .ProfilePage {
+    width: 100vw;
+  }
+  .ProfilePopup {
+    object-fit: cover;
+    height: 88.8vh;
+    width: 99vw;
+  }
+  .ProfileHeader {
+   
+    min-height: 200px;
+}
+}
+@media only screen and (max-width: 725px) {
+  .ProfilePicture {
+    height: 150px;
+    width: 150px;
+  }
+
+  .NameFollowingFollowersHeader {
+    width: 250px;
+    height: 128px;
+    justify-content: space-around;
+  }
+  .NameFollowingFollowersHeader div {
+    width: 200px;
+  }
+  .ProfilePopup {
+    width: 99vw;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .ProfilePicture {
+    height: 100px;
+    width: 100px;
+  }
+ 
+  .ProfileHeader {
+    display: flex;
+    flex-direction: column;
+  }
+  .ProfileHeaderButtons {
+    flex-direction: row;
+    width: 97vw;
+    height: 44px;
+    justify-content: space-evenly;
+  }
+  .ProfileHeaderButtons a {
+    padding: 10px;
+    border-radius: 5px;
+    border: 4px solid;
+    width: 100px;
+    text-align: center;
+    font-size: 12px;
+}
+}
+.ProfileHeaderButtons button {
+  border-radius: 0px;
+}
+.FollowingFollowers {
+  font-size: 20px;
+}
+.NameFollowingFollowersHeader {
+  width: 250px;
+  justify-content: space-around;
+}
+.ProfileHeaderImageName {
+  height: 130px;
+}

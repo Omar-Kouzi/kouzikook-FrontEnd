@@ -1,0 +1,109 @@
+.NavigatorBar a:hover,
+.NavigatorBar a:focus,
+.PageNavigator a.active {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+.NavigatorBar a {
+  padding: 10px;
+  width: 130px;
+  --b: 3px;
+  --s: 0.45em;
+  --color: #000000;
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.NavigatorBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 4px solid;
+  min-width: 250px;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: #fff;
+}
+
+
+.PageRoutes {
+  width: 80vw;
+}
+.PageNavigator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.Navlogo {
+  border-radius: 50%;
+  height: 125px;
+  width: 125px;
+  -right: 10px;
+  animation: spin 60s linear infinite;
+  /* border: #d80909 solid; */
+}
+
+@media only screen and (max-width: 950px) {
+  .NavigatorBar {
+    flex-direction: row;
+    min-height: 80px;
+    max-height: 80px;
+    border-top: 4px solid;
+    border-right: none;
+  }
+  .logoutMinNav{
+    display: none;
+  }
+ .loginMinNav{
+  margin-right: 10px;
+ }
+ 
+ 
+  .PageNavigator {
+    flex-direction: row;
+    width: 60vh;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .NavigatorBar a {
+    width: auto;
+    height: 26px;
+  }
+  .NavlogoA {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .PageNavigator {
+    width: 95vw;
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .PageNavigator {
+    width: 40vh;
+    gap: 5px;
+  }
+}

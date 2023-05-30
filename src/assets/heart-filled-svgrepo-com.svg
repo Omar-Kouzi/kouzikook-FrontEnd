@@ -1,0 +1,19 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+	<title>heart-svgrepo-com (1)-svg</title>
+	<defs>
+		<image  width="20" height="17" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAMAAADqmnyMAAAAAXNSR0IB2cksfwAAAQ5QTFRFAAAA6AAA6wAA/wAA/wAA/wAA/wAA/wAAAAAAZAAA3gAA9QAA/AAA9wAA5wAAewAAAAAA/wAA/wAA/wAA/wAA/wAA/wAA/wAAiQAAwgAA/QAA/wAA/QAA2QAAngAA1QAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA2gAA/QAA8AAA9wAA/wAA/wAA/wAA/wAA+AAA/gAA/gAA/wAA/wAA/wAA/QAA/wAA/wAA/gAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA9QIC+wEB/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAAKSy4CQAAAFp0Uk5TAD9MIgkWDgIBIbfu+uyhFQILRI2iikURGK39//7dcj6s8Pv53G4Pjf/14Pr93UPf//7+uwTx6yTn+LwxZKYm4g2V92cZ1nUUcrYBJ+BNy///lANp6Px4jI8KUAHRpgAAALhJREFUeJxdj9USwjAQRRd3dxYtRVssuLtTXP//R2iLDO15yZ0zN9ksAI9CqQIRtUarE4PeYDSZLVabHRxOl9vj9QnSHwgiYigcicbiFCboZIqXacEhZrI5hhVCvgCgK+KbUpmIJ6kAVGsoo94AaMpli7/fJvJmB6DLSh3p8dP7tFQOhsJHR5LqeCKuNJ39vUrNF++Nl62fY1dr+LBhvr0tBz+4HYP7A4kfT/DP+UJd6zeQc388v/EFxl0h9AMD1A0AAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		.s0 { opacity: .1;fill: #323232 } 
+		.s1 { fill: none;stroke: #323232;stroke-linejoin: round;stroke-width: 2 } 
+	</style>
+	<g id="SVGRepo_bgCarrier">
+	</g>
+	<g id="SVGRepo_tracerCarrier">
+	</g>
+	<g id="SVGRepo_iconCarrier">
+		<path id="Layer" class="s0" d="m4.9 13l5.6 6.3c0.8 0.9 2.2 0.9 3 0l5.6-6.3c1.7-1.9 2.6-4.3 1.3-6.6-1.4-2.6-4.1-3.1-6.4-1.4-0.8 0.6-1.5 1.3-1.8 1.7-0.1 0.1-0.3 0.1-0.4 0-0.3-0.4-1-1.1-1.8-1.7-2.3-1.7-5-1.2-6.4 1.4-1.3 2.3-0.4 4.7 1.3 6.6z"/>
+		<use id="Layer 1" href="#img1" x="2" y="3"/>
+		<path id="Layer" class="s1" d="m4.9 13l5.6 6.3c0.8 0.9 2.2 0.9 3 0l5.6-6.3c1.7-1.9 2.6-4.3 1.3-6.6-1.4-2.6-4.1-3.1-6.4-1.4-0.8 0.6-1.5 1.3-1.8 1.7-0.1 0.1-0.3 0.1-0.4 0-0.3-0.4-1-1.1-1.8-1.7-2.3-1.7-5-1.2-6.4 1.4-1.3 2.3-0.4 4.7 1.3 6.6z"/>
+	</g>
+</svg>

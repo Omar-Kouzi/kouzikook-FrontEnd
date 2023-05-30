@@ -1,0 +1,93 @@
+import { NavLink } from "react-router-dom";
+import {  useState } from "react";
+import axios from "axios";
+import "../Dashboard.css";
+
+function Categories() {
+  const [categories, setCategories] = useState([]);
+  const [newCategoryTitle, setNewCategoryTitle] = useState("");
+
+  // fetching the category
+    async function fetchCategory() {
+      try {
+        const response = await axios.get("http://localhost:1112/category");
+        setCategories(response.data.categories);
+      } catch (err) {
+        console.log("Err", err);
+      }
+    }
+    fetchCategory();
+  
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:1112/category/${id}`, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleAddCategory = async () => {
+    try {
+      await axios.post(
+        "http://localhost:1112/category",
+        { title: newCategoryTitle },
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
+      setCategories((prevCategories) => [
+        ...prevCategories,
+        { title: newCategoryTitle },
+      ]);
+      setNewCategoryTitle("");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  return (
+    <section className="DashboardPage">
+      <header className="DashboardHeader">
+        <NavLink to={"/dashboard/users"}>Users</NavLink>
+        <NavLink to={"/dashboard/recipes"}>Recipes/Categories</NavLink>
+      </header>
+      <div className="UserList">
+        {categories.map((category) => (
+          <div key={category.id} className="UserItem">
+            <div className="UserItemImageName">
+              <h3>{category.title}</h3>
+            </div>
+            
+            <div className="UserItemEmailDelete">
+            <hr />
+              <h2
+                onClick={() => handleDelete(category._id)}
+                className="CardCloseButton"
+              >
+                Delete
+              </h2>
+            </div>
+          </div>
+        ))}
+        <div className="UserItem">
+          <div className="UserItemImageName">
+            <input value={newCategoryTitle} className="categoryAddInput" onChange={(e) => setNewCategoryTitle(e.target.value)} />
+          </div>
+          <hr />
+          <div className="UserItemEmailDelete">
+            <div></div>
+            <h2 onClick={handleAddCategory} className="CardCloseButton">Add Category</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Categories;

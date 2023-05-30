@@ -1,0 +1,33 @@
+.EditRecipe {
+  width: 83.2vw;
+  height: 100vh;
+  padding: 20px;
+}
+.EditingForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+  height: 75vh;
+}
+.EditingForm input {
+  padding: 10px;
+  background-color: white;
+  border: 4px solid;
+  border-radius: 5px;
+}
+.EditingForm label {
+  padding: 10px;
+  border: 4px solid;
+  border-radius: 5px;
+
+}
+.SubmitEditButton {
+  padding: 10px;
+  background-color: white;
+  border: 4px solid;
+  border-radius: 5px;
+
+}

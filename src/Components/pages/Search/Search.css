@@ -1,0 +1,65 @@
+.SearchSection {
+  height: 100vh;
+  width: 83vw;
+}
+.SearchSectionHeader {
+  height: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.SearchSectionHeader input {
+  padding: 10px;
+  padding-left: 35px;
+  width: 250px;
+  border: 4px solid;
+  border-radius: 5px;
+  background-image: url("./search.png");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 6px 50%;
+}
+.searchContainer {
+  overflow-y: scroll;
+  height: 600px;
+}
+.searchContainer::-webkit-scrollbar {
+  display: none;
+}
+.searchUserContainer {
+  display: flex;
+  padding: 5px 15px;
+  align-items: center;
+}
+.searchUserContainer:hover {
+  cursor: pointer;
+}
+/* .searchUser{
+  padding: 5px;
+} */
+.searchUserImage {
+  width: 50px;
+  height: 50px;
+  border: 2px double;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+@media only screen and (max-width: 950px) {
+ 
+  .SearchSection {
+    width: 100vw;
+    height: 89vh;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .SearchSectionHeader input {
+    width: 180px;
+  }
+ 
+}
+@media only screen and (max-width: 490px) {
+  .SearchSectionHeader input {
+    width: 100px;
+  }
+ 
+}
