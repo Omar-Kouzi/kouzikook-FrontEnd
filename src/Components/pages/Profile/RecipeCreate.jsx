@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import axios from "axios";
 import "./RecipeCreate.css";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ function CreateRecipe() {
     category: "",
     image: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
   const PostRecipe = async () => {
@@ -42,9 +43,12 @@ function CreateRecipe() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    PostRecipe();
+    if (!isSubmitting) {
+      setIsSubmitting(true);
+      await PostRecipe();
+    }
   };
 
   useEffect(() => {
@@ -159,8 +163,12 @@ function CreateRecipe() {
             </option>
           ))}
         </select>
-        <button className="btn-add-recipe" type="submit">
-          Create Recipe
+        <button
+          className="btn-add-recipe"
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Creating Recipe..." : "Create Recipe"}
         </button>
       </form>
       <div className="DemoRecipe">

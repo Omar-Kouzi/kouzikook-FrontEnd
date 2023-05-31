@@ -8,7 +8,7 @@ import logo from "../../../../assets/cookieLogo.png";
 
 function Signup() {
   const navigate = useNavigate();
-  const [user, setUser] = useState([]);
+  // const [user,setUser] = useState([]);
   const [imagee, SetImagee] = useState("");
   const [error, setError] = useState("");
   const [valid, setValid] = useState(false);
@@ -31,7 +31,7 @@ function Signup() {
         "http://localhost:1112/user",
         formDataToSend
       );
-      setUser((prevRents) => [...prevRents, res.data.data]);
+      // setUser((prevRents) => [...prevRents, res.data.data]);
       if (!res.data.success) {
         setError(res.data.message);
         setValid(true);

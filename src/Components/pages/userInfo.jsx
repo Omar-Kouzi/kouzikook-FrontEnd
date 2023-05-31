@@ -7,8 +7,8 @@ function UserInfo() {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [recipes, setRecipes] = useState([]);
-  const [isFollowing, setIsFollowing] = useState(false);
-  const [isCurrentUser, setCurrentUser] = useState(false);
+  const [isFollowing, setIsFollowing] = useState([]);
+  const [isCurrentUser, setCurrentUser] = useState("");
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -17,6 +17,15 @@ function UserInfo() {
           `http://localhost:1112/user/${userId.userId}`
         );
         setUser(response.data);
+
+        // Check if the current user is following this user
+        const followers = await response.data.followers;
+        const sessionStorageId = sessionStorage.getItem("id");
+        if (followers.some((follower) => follower == sessionStorageId)) {
+          setIsFollowing(true);
+        } else {
+          setIsFollowing(false);
+        }
       } catch (err) {
         console.log("Err", err);
       }
@@ -41,6 +50,43 @@ function UserInfo() {
     fetchUserRecipes();
   }, [userId.userId]);
 
+  const handleFollow = async () => {
+    try {
+      const followResponse = await axios.post(
+        `http://localhost:1112/user/follow/${userId.userId}`,
+        {}, // Empty object as payload
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
+      console.log(followResponse.data);
+      setIsFollowing(true);
+    } catch (error) {
+      console.error(error);
+      navigate("/login");
+    }
+  };
+  const handleUnFollow = async () => {
+    try {
+      const followResponse = await axios.post(
+        `http://localhost:1112/user/unfollow/${userId.userId}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+      );
+      console.log(followResponse.data);
+
+      // update the following state variable to false
+      setIsFollowing(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <section>
       <div className="UserCArd">
@@ -50,7 +96,16 @@ function UserInfo() {
               <img src={user.profilePic} alt="" />
               <h1>{user.name}</h1>
             </div>
-
+            {isCurrentUser &&
+              (!isFollowing ? (
+                <h2 className="CardCloseButton" onClick={handleFollow}>
+                  Follow
+                </h2>
+              ) : (
+                <h2 className="CardCloseButton" onClick={handleUnFollow}>
+                  Unfollow
+                </h2>
+              ))}
           </header>
           <hr />
           {recipes.length > 0 ? (

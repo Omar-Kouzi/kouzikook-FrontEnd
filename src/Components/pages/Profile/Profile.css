@@ -57,7 +57,8 @@
   padding: 10px;
   border-radius: 5px;
   border: 4px solid;
-  width: 150px;text-align: center;
+  width: 150px;
+  text-align: center;
 }
 .ProfileNavigator {
   display: flex;
@@ -76,61 +77,17 @@
   text-align: center;
 }
 
-.ProfilePopup {
-  border: 4px solid;
-  position: absolute;
-  height: 100vh;
-  background-color: #ffffff;
-  width: 79.8vw;
-  min-width: 250px;
-  border-radius: 5px;
-  margin-bottom: 80vh;
-  top: 0;
-  object-fit: cover;
-}
-.ProfilePopup-enter {
-  opacity: 0;
-}
 
-.ProfilePopup-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in-out;
-}
 
-.ProfilePopup-exit {
-  opacity: 1;
-}
 
-.ProfilePopup-exit-active {
-  opacity: 0;
-  transition: opacity 300ms ease-in-out;
-}
 .Following-FollowersHeader {
   display: flex;
   justify-content: space-between;
   padding: 5px 15px;
   align-items: center;
 }
-.Following-FollowersProfilePopupCard div {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin: auto;
-  align-items: center;
-  padding-top: 8px;
-}
-.Following-FollowersProfilePopupCard p {
-  padding: 5px 15px;
-}
-.Following-FollowersProfilePopupCards {
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  height: 449px;
-}
-.Following-FollowersProfilePopupCards::-webkit-scrollbar {
-  display: none;
-}
+
+
 .ProfileEditHeader {
   display: flex;
   justify-content: space-between;
@@ -153,39 +110,14 @@
   border: 4px solid;
 }
 
-@media only screen and (max-width: 1300px) {
-  .ProfilePopup {
-    width: 75vw;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .ProfilePopup {
-    width: 73.8vw;
-  }
-}
-@media only screen and (max-width: 1130px) {
-  .ProfilePopup {
-    width: 72.2vw;
-  }
-}
-@media only screen and (max-width: 1040px) {
-  .ProfilePopup {
-    width: 69.8vw;
-  }
-}
 @media only screen and (max-width: 950px) {
   .ProfilePage {
     width: 100vw;
   }
-  .ProfilePopup {
-    object-fit: cover;
-    height: 88.8vh;
-    width: 99vw;
-  }
+
   .ProfileHeader {
-   
     min-height: 200px;
-}
+  }
 }
 @media only screen and (max-width: 725px) {
   .ProfilePicture {
@@ -201,16 +133,13 @@
   .NameFollowingFollowersHeader div {
     width: 200px;
   }
-  .ProfilePopup {
-    width: 99vw;
-  }
 }
 @media only screen and (max-width: 640px) {
   .ProfilePicture {
     height: 100px;
     width: 100px;
   }
- 
+
   .ProfileHeader {
     display: flex;
     flex-direction: column;
@@ -228,7 +157,7 @@
     width: 100px;
     text-align: center;
     font-size: 12px;
-}
+  }
 }
 .ProfileHeaderButtons button {
   border-radius: 0px;

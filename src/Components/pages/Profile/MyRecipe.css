@@ -31,11 +31,13 @@
 }
 .MyRecipeCardTitle {
   padding: 5px;
+  margin-bottom: 5px;
 }
 .MyRecipeCardImage {
   border-bottom: 4px solid;
   width: 200px;
-  height: 200px;
+  height: 175px;
+  object-fit: contain;
 }
 
 .profileCard{
@@ -72,6 +74,11 @@
 .yes{
   color: green;
   border:4px green solid;
+}
+.MyApprovedRecipe{
+  color: green;
+  border: 3px solid;
+  padding: 2px;
 }
 @media only screen and (max-width: 1300px) {
   .MyRecipeProfileSectiom {
@@ -115,6 +122,10 @@
   }
   .MyRecipeCardImage {
     width: 180px;
+    height: 164px;
+  }
+  .MyApprovedRecipe{
+    margin-top: 10px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -128,14 +139,14 @@
     grid-template-columns: auto auto auto;
   }
   .MyRecipeCard {
-    width: 95px;
-    height: 130px;
+    width: 130px;
+    height: 230px;
     border: 2px solid;
     border-radius: 1px;
   }
   .MyRecipeCardImage {
-    width: 95px;
-    height: 100px;
+    width: 130px;
+    height: 140px;
   }
   .profileCard {
     width: 49vh;
@@ -164,14 +175,14 @@
     grid-template-columns: auto auto auto;
   }
   .MyRecipeCard {
-    width: 95px;
-    height: 130px;
+    width: 120px;
+    height: 230px;
     border: 2px solid;
     border-radius: 1px;
   }
   .MyRecipeCardImage {
-    width: 95px;
-    height: 100px;
+    width: 120px;
+    height: 140px;
   }
   .profileCard {
     width: 302px;

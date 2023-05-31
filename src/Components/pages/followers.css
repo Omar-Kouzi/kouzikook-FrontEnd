@@ -1,0 +1,15 @@
+.FollowersSection {
+  height: 100vh;
+  width: 80vw;
+}
+.followingElements div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px;
+}
+@media only screen and (max-width: 950px) {
+  .FollowersSection {
+    width: 100vw;
+  }
+}

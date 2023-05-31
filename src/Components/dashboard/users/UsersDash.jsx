@@ -41,7 +41,9 @@ function Users() {
     <section className="DashboardPage">
       <header className="DashboardHeader">
         <NavLink to={"/dashboard/users"}>Users</NavLink>
-        <NavLink to={"/dashboard/recipes"}>Recipes/Categories</NavLink>
+        <NavLink to={"/dashboard/categories"}>Categories</NavLink>
+        <NavLink to={"/dashboard/recipes"}>Recipes</NavLink>
+
       </header>
       <div className="UserList">
         {users.map((user ,index) => (

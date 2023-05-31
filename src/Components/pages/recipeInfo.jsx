@@ -1,22 +1,21 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useState } from "react";
+import { useParams } from "react-router";
 import axios from "axios";
 
 function RecipeInfo() {
   const recipeId = useParams();
   const [recipe, setRecipe] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        `http://localhost:1112/recipe/${recipeId.recipeId}`
-      );
-      setRecipe(response.data);
-    };
-    fetchData();
-  }, []);
+
+  const fetchData = async () => {
+    const response = await axios.get(
+      `http://localhost:1112/recipe/${recipeId.recipeId}`
+    );
+    setRecipe(response.data);
+  };
+  fetchData();
+
   return (
     <section>
-      {/* add the ref to the Popup div */}
       <div className="RecipeCArd">
         <img src={recipe.image} alt="Card" className="RecipeCardPopImage" />
         <div className="RecipeCArdContent">

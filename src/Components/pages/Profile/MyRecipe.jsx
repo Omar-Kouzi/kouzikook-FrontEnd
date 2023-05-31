@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./MyRecipe.css";
 
@@ -8,6 +8,7 @@ function MyRecipes() {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const userId = sessionStorage.getItem("id");
+  const nodeRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +22,7 @@ function MyRecipes() {
 
       const userId = sessionStorage.getItem("id");
       const userRecipes = response.data.filter((item) => item.user === userId);
-
+      userRecipes.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       setData(userRecipes);
     };
     fetchData();
@@ -69,7 +70,10 @@ function MyRecipes() {
     <div className="MyRecipeProfileSectiom">
       {data.map((recipe, index) => (
         <div key={index} className="MyRecipeCard">
-          <p className="MyRecipeCardTitle">{recipe.title}</p>
+          <p className="MyRecipeCardTitle">
+            {recipe.title}  {recipe.approved ? <p className="MyApprovedRecipe"> Approved</p>  :  <span className="MyUnApprovedRecipe"> NotApproved</span>}
+          </p>
+
           <img
             src={recipe.image}
             alt="main Recipe"
@@ -83,8 +87,9 @@ function MyRecipes() {
         timeout={300}
         classNames="Popup profileCard"
         unmountOnExit
+        nodeRef={nodeRef}
       >
-        <div className="Popup profileCard">
+        <div ref={nodeRef} className="Popup profileCard">
           <div className="RecipeCArd">
             <img
               src={selectedRecipe?.image}
