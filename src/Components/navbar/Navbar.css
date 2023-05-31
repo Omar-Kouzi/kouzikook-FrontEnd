@@ -43,7 +43,6 @@
   background-color: #fff;
 }
 
-
 .PageRoutes {
   width: 80vw;
 }
@@ -71,14 +70,13 @@
     border-top: 4px solid;
     border-right: none;
   }
-  .logoutMinNav{
+  .logoutMinNav {
     display: none;
   }
- .loginMinNav{
-  margin-right: 10px;
- }
- 
- 
+  .loginMinNav {
+    margin-right: 10px;
+  }
+
   .PageNavigator {
     flex-direction: row;
     width: 60vh;
@@ -95,11 +93,13 @@
     display: none;
   }
 }
+
 @media only screen and (max-width: 500px) {
   .PageNavigator {
     width: 95vw;
     gap: 10px;
   }
+ 
 }
 @media only screen and (max-width: 360px) {
   .PageNavigator {
