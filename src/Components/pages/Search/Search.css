@@ -45,21 +45,21 @@
   margin-right: 20px;
 }
 @media only screen and (max-width: 950px) {
- 
   .SearchSection {
     width: 100vw;
-    height: 80vh;
+    height: 75vh;
+  }
+  .searchContainer {
+    height: 373px;
   }
 }
 @media only screen and (max-width: 650px) {
   .SearchSectionHeader input {
     width: 180px;
   }
- 
 }
 @media only screen and (max-width: 490px) {
   .SearchSectionHeader input {
     width: 100px;
   }
- 
 }
