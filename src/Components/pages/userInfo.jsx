@@ -14,14 +14,14 @@ function UserInfo() {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1112/user/${userId.userId}`
+          `https://kouzi-kook-backend.onrender.com/user/${userId.userId}`
         );
         setUser(response.data);
 
         // Check if the current user is following this user
         const followers = await response.data.followers;
         const sessionStorageId = sessionStorage.getItem("id");
-        if (followers.some((follower) => follower == sessionStorageId)) {
+        if (followers.some((follower) => follower === sessionStorageId)) {
           setIsFollowing(true);
         } else {
           setIsFollowing(false);
@@ -34,7 +34,7 @@ function UserInfo() {
     const fetchUserRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1112/recipe?user=${userId.userId}`
+          `https://kouzi-kook-backend.onrender.com/recipe?user=${userId.userId}`
         );
         setRecipes(response.data);
       } catch (err) {
@@ -53,7 +53,7 @@ function UserInfo() {
   const handleFollow = async () => {
     try {
       const followResponse = await axios.post(
-        `http://localhost:1112/user/follow/${userId.userId}`,
+        `https://kouzi-kook-backend.onrender.com/user/follow/${userId.userId}`,
         {}, // Empty object as payload
         {
           headers: {
@@ -71,7 +71,7 @@ function UserInfo() {
   const handleUnFollow = async () => {
     try {
       const followResponse = await axios.post(
-        `http://localhost:1112/user/unfollow/${userId.userId}`,
+        `https://kouzi-kook-backend.onrender.com/user/unfollow/${userId.userId}`,
         {},
         {
           headers: {

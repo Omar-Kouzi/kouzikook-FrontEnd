@@ -35,7 +35,7 @@ function Profile() {
       const userId = sessionStorage.getItem("id");
       try {
         const response = await axios.get(
-          `http://localhost:1112/user/${userId}`
+          `https://kouzi-kook-backend.onrender.com/user/${userId}`
         );
         setUserData(response.data);
         setFollowingnum(response.data.following.length);

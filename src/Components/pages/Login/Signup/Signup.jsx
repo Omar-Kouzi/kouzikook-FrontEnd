@@ -28,7 +28,7 @@ function Signup() {
       formDataToSend.append("image", imagee);
 
       const res = await axios.post(
-        "http://localhost:1112/user",
+        "https://kouzi-kook-backend.onrender.com/user",
         formDataToSend
       );
       // setUser((prevRents) => [...prevRents, res.data.data]);

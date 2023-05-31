@@ -16,7 +16,7 @@ function EditProfile() {
       const userId = sessionStorage.getItem("id");
       try {
         const response = await axios.get(
-          `http://localhost:1112/user/${userId}`
+          `https://kouzi-kook-backend.onrender.com/user/${userId}`
         );
         setUserData(response.data);
 
@@ -40,7 +40,7 @@ function EditProfile() {
       formData.append("image", imageFile);
     }
     axios
-      .patch(`http://localhost:1112/user/${userId}`, formData, {
+      .patch(`https://kouzi-kook-backend.onrender.com/user/${userId}`, formData, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           "Content-Type": "multipart/form-data",

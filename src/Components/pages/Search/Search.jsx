@@ -14,10 +14,10 @@ function Search() {
   useEffect(() => {
     async function fetchUsersAndRecipes() {
       try {
-        const usersResponse = await axios.get("http://localhost:1112/user");
+        const usersResponse = await axios.get("https://kouzi-kook-backend.onrender.com/user");
         setUsers(usersResponse.data);
 
-        const recipesResponse = await axios.get("http://localhost:1112/recipe");
+        const recipesResponse = await axios.get("https://kouzi-kook-backend.onrender.com/recipe");
         setRecipes(recipesResponse.data);
       } catch (err) {
         console.log("Err", err);

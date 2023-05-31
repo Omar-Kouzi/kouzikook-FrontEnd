@@ -11,7 +11,7 @@ const navigate = useNavigate()
       const userId = sessionStorage.getItem("id");
       try {
         const response = await axios.get(
-          `http://localhost:1112/user/following/${userId}`
+          `https://kouzi-kook-backend.onrender.com/user/following/${userId}`
         );
         const Following = response.data.following;
         setFollowingData(Following);
@@ -27,7 +27,7 @@ const navigate = useNavigate()
   const handleUnFollow = async (id) => {
     try {
       const followResponse = await axios.post(
-        `http://localhost:1112/user/unfollow/${id}`,
+        `https://kouzi-kook-backend.onrender.com/user/unfollow/${id}`,
         {},
         {
           headers: {

@@ -15,7 +15,7 @@ function Users() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await axios.get("http://localhost:1112/user");
+        const response = await axios.get("https://kouzi-kook-backend.onrender.com/user");
         setUsers(response.data);
       } catch (err) {
         console.log("Err", err);
@@ -26,7 +26,7 @@ function Users() {
   // deleting the users
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:1112/user/${id}`, {
+      await axios.delete(`https://kouzi-kook-backend.onrender.com/user/${id}`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },

@@ -28,7 +28,7 @@ function CreateRecipe() {
 
     try {
       await axios.post(
-        `http://localhost:1112/recipe/${userId}`,
+        `https://kouzi-kook-backend.onrender.com/recipe/${userId}`,
         formDataToSend,
         {
           headers: {
@@ -54,7 +54,7 @@ function CreateRecipe() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:1112/category");
+        const res = await axios.get("https://kouzi-kook-backend.onrender.com/category");
         const sortedCategories = res.data.categories.sort((a, b) =>
           a.title.localeCompare(b.title)
         );

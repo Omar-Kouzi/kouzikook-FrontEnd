@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../../../assets/cookieLogo.png";
 
 async function loginUser(credentials) {
-  return fetch("http://localhost:1112/user/login", {
+  return fetch("https://kouzi-kook-backend.onrender.com/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

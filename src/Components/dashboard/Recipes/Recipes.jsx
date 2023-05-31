@@ -9,11 +9,11 @@ function Recipes() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:1112/recipe`);
+      const response = await axios.get(`https://kouzi-kook-backend.onrender.com/recipe`);
 
       const userData = await Promise.all(
         response.data.map((item) =>
-          axios.get(`http://localhost:1112/user/${item.user}`)
+          axios.get(`https://kouzi-kook-backend.onrender.com/user/${item.user}`)
         )
       );
 
@@ -48,7 +48,7 @@ function Recipes() {
     const recipeId = data[index]._id;
 
     try {
-      await axios.patch(`http://localhost:1112/recipe/approve/${recipeId}`);
+      await axios.patch(`https://kouzi-kook-backend.onrender.com/recipe/approve/${recipeId}`);
       // Update the state to remove the approved recipe
       setData((prevData) => prevData.filter((_, i) => i !== index));
     } catch (error) {

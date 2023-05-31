@@ -11,7 +11,7 @@ function Followers() {
       const userId = sessionStorage.getItem("id");
       try {
         const response = await axios.get(
-          `http://localhost:1112/user/followers/${userId}`
+          `https://kouzi-kook-backend.onrender.com/user/followers/${userId}`
         );
         const Followers = response.data.followers;
         setFollowersData(Followers);

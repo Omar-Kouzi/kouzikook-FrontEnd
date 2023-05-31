@@ -10,7 +10,7 @@ function Categories() {
   // fetching the category
   async function fetchCategory() {
     try {
-      const response = await axios.get("http://localhost:1112/category");
+      const response = await axios.get("https://kouzi-kook-backend.onrender.com/category");
       const sortedCategories = response.data.categories.sort((a, b) =>
         a.title.localeCompare(b.title)
       );
@@ -23,7 +23,7 @@ function Categories() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:1112/category/${id}`, {
+      await axios.delete(`https://kouzi-kook-backend.onrender.com/category/${id}`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
@@ -36,7 +36,7 @@ function Categories() {
   const handleAddCategory = async () => {
     try {
       await axios.post(
-        "http://localhost:1112/category",
+        "https://kouzi-kook-backend.onrender.com/category",
         { title: newCategoryTitle },
         {
           headers: {

@@ -12,11 +12,11 @@ function MyRecipes() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:1112/recipe`);
+      const response = await axios.get(`https://kouzi-kook-backend.onrender.com/recipe`);
 
       await Promise.all(
         response.data.map((item) =>
-          axios.get(`http://localhost:1112/user/${item.user}`)
+          axios.get(`https://kouzi-kook-backend.onrender.com/user/${item.user}`)
         )
       );
 
@@ -38,7 +38,7 @@ function MyRecipes() {
     console.log(selectedRecipe._id);
 
     try {
-      await axios.delete(`http://localhost:1112/recipe/${selectedRecipe._id}`, {
+      await axios.delete(`https://kouzi-kook-backend.onrender.com/recipe/${selectedRecipe._id}`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },

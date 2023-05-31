@@ -2,18 +2,20 @@ import "./Home.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import Loader from "../../../assets/loader/Loader";
 
 function Home() {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:1112/recipe`);
+      const response = await axios.get(`https://kouzi-kook-backend.onrender.com/recipe`);
 
       const userData = await Promise.all(
         response.data.map((item) =>
-          axios.get(`http://localhost:1112/user/${item.user}`)
+          axios.get(`https://kouzi-kook-backend.onrender.com/user/${item.user}`)
         )
       );
 
@@ -32,6 +34,7 @@ function Home() {
       );
 
       setData(approvedRecipes);
+      setIsLoading(false); // Set isLoading to false after fetching the data
     };
 
     fetchData();
@@ -49,40 +52,46 @@ function Home() {
   
   return (
     <section className="HomePage">
-      <div className="HomeMainSlider">
-        {data.map((item, index) => (
-          <div key={index} className="HomeCard">
-            <header className="HomeCardHeader">
-              <div
-                className="HomeCardHeaderTitleRating"
-                onClick={() => handleUserClick(index)}
-              >
-                <img
-                  src={item.userimg}
-                  alt="profilepic"
-                  className="HomeCardHeaderPic"
-                />
-                <div className="HomeCardHeaderTitle">
-                  <h2>{item.title}</h2>
-                  <h3>{item.username}</h3>
+      {isLoading ? ( // Conditionally render the loader
+        <div className="LoaderWrapper">
+          <Loader />
+        </div>
+      ) : (
+        <div className="HomeMainSlider">
+          {data.map((item, index) => (
+            <div key={index} className="HomeCard">
+              <header className="HomeCardHeader">
+                <div
+                  className="HomeCardHeaderTitleRating"
+                  onClick={() => handleUserClick(index)}
+                >
+                  <img
+                    src={item.userimg}
+                    alt="profilepic"
+                    className="HomeCardHeaderPic"
+                  />
+                  <div className="HomeCardHeaderTitle">
+                    <h2>{item.title}</h2>
+                    <h3>{item.username}</h3>
+                  </div>
                 </div>
+              </header>
+              <div className="HomeCardMainImage  ">
+                <img
+                  src={item.image}
+                  alt="main Recipe"
+                  className="HomeCardMainImage"
+                  onClick={() => handleRecipeClick(index)}
+                />
               </div>
-            </header>
-            <div className="HomeCardMainImage  ">
-              <img
-                src={item.image}
-                alt="main Recipe"
-                className="HomeCardMainImage"
-                onClick={() => handleRecipeClick(index)}
-              />
+              <div className="HomeCardDescription">
+                <h3>Description: </h3>
+                <p>{item.description}</p>
+              </div>
             </div>
-            <div className="HomeCardDescription">
-              <h3>Description: </h3>
-              <p>{item.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
