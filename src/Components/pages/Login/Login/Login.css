@@ -29,7 +29,6 @@
 .Logintitle {
   margin-top: 200px;
   font-size: 40px;
-
 }
 
 .LoginInputs {
@@ -134,8 +133,13 @@
   }
   .Logotitle {
     height: 408px;
-
-}
+  }
+  .loginLogo{
+    margin-bottom: 140px;
+  }
+  .LoginForm{
+    height: 210px;
+  }
   .Logininput {
     width: 300px;
   }
