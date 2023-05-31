@@ -1,7 +1,7 @@
 .HomePage {
   display: flex;
-/* background-image: url("/src/assets/background.png");   */
-/* background-color: #ffffff;
+  /* background-image: url("/src/assets/background.png");   */
+  /* background-color: #ffffff;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 90 90'%3E%3Ccircle fill-opacity='0.1' fill='%23000' cx='45' cy='45' r='12'/%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='0' cy='90' r='8'/%3E%3Ccircle cx='90' cy='90' r='8'/%3E%3Ccircle cx='90' cy='0' r='8'/%3E%3Ccircle cx='0' cy='0' r='8'/%3E%3C/g%3E%3C/svg%3E"); */
   height: 100vh;
   width: 100vw;
@@ -29,7 +29,6 @@
   border-radius: 1%;
   margin-top: 20px;
   background-color: #ffffffe7;
-
 }
 .HomeCardHeader {
   height: 70px;
@@ -194,16 +193,14 @@
   width: 300px;
   height: 290px;
   border-bottom: 4px double;
-
-
 }
-.RecipeHomePopupCardImg:hover{
+.RecipeHomePopupCardImg:hover {
   cursor: pointer;
 }
-.HomeCardHeaderTitle{
+.HomeCardHeaderTitle {
   width: 400px;
 }
-.HomeCardHeaderTitle:hover{
+.HomeCardHeaderTitle:hover {
   cursor: pointer;
 }
 @media only screen and (max-width: 1450px) {
@@ -259,7 +256,9 @@
     height: 88.8vh;
     width: 100vw;
   }
-
+  .RecipeCArd {
+    height: 70vh;
+  }
   .RecipeCardPopImage {
     height: 88.8vh;
   }
@@ -271,8 +270,7 @@
     height: 450px;
   }
   .UserCArd {
-    height: 85vh;
-    
+    height: 70vh;
     width: 90vw;
   }
 }
@@ -303,17 +301,15 @@
   .HomeCardDescription::-webkit-scrollbar {
     display: none;
   }
-
- 
 }
 @media only screen and (max-width: 545px) {
   .Popup {
     width: 97.8vw;
   }
-  .RecipeHomePopupCard{
-    width:280px ;
+  .RecipeHomePopupCard {
+    width: 280px;
   }
-  .RecipeHomePopupCardImg{
+  .RecipeHomePopupCardImg {
     width: 280px;
   }
   .HomeCard {
@@ -352,7 +348,7 @@
   .RecipeHomePopupCards {
     height: 480px;
   }
-  .followunfollowHome{
+  .followunfollowHome {
     font-size: 23px;
   }
 }
