@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <NavigationBar /> */}
+      <NavigationBar />
 
       <PageRoutes className="pagesRouts" />
     </div>

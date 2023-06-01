@@ -3,18 +3,15 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import Loader from "../../../assets/loader/Loader";
-import NavigationBar from "../../navbar/NavigationBar";
 
 function Home() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `https://kouzi-kook-backend.onrender.com/recipe`
-      );
+      const response = await axios.get(`https://kouzi-kook-backend.onrender.com/recipe`);
 
       const userData = await Promise.all(
         response.data.map((item) =>
@@ -30,8 +27,8 @@ function Home() {
         liked: false,
       }));
 
-      const approvedRecipes = combinedData.filter((recipe) => recipe.approved);
-
+      const approvedRecipes = combinedData.filter(recipe => recipe.approved);
+      
       approvedRecipes.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
@@ -52,54 +49,50 @@ function Home() {
     const userId = data[index].user;
     navigate(`/user/${userId}`);
   };
-
+  
   return (
-    <>
-      {" "}
-      <NavigationBar />
-      <section className="HomePage">
-        {isLoading ? ( // Conditionally render the loader
-          <div className="LoaderWrapper">
-            <Loader />
-          </div>
-        ) : (
-          <div className="HomeMainSlider">
-            {data.map((item, index) => (
-              <div key={index} className="HomeCard">
-                <header className="HomeCardHeader">
-                  <div
-                    className="HomeCardHeaderTitleRating"
-                    onClick={() => handleUserClick(index)}
-                  >
-                    <img
-                      src={item.userimg}
-                      alt="profilepic"
-                      className="HomeCardHeaderPic"
-                    />
-                    <div className="HomeCardHeaderTitle">
-                      <h2>{item.title}</h2>
-                      <h3>{item.username}</h3>
-                    </div>
-                  </div>
-                </header>
-                <div className="HomeCardMainImage  ">
+    <section className="HomePage">
+      {isLoading ? ( // Conditionally render the loader
+        <div className="LoaderWrapper">
+          <Loader />
+        </div>
+      ) : (
+        <div className="HomeMainSlider">
+          {data.map((item, index) => (
+            <div key={index} className="HomeCard">
+              <header className="HomeCardHeader">
+                <div
+                  className="HomeCardHeaderTitleRating"
+                  onClick={() => handleUserClick(index)}
+                >
                   <img
-                    src={item.image}
-                    alt="main Recipe"
-                    className="HomeCardMainImage"
-                    onClick={() => handleRecipeClick(index)}
+                    src={item.userimg}
+                    alt="profilepic"
+                    className="HomeCardHeaderPic"
                   />
+                  <div className="HomeCardHeaderTitle">
+                    <h2>{item.title}</h2>
+                    <h3>{item.username}</h3>
+                  </div>
                 </div>
-                <div className="HomeCardDescription">
-                  <h3>Description: </h3>
-                  <p>{item.description}</p>
-                </div>
+              </header>
+              <div className="HomeCardMainImage  ">
+                <img
+                  src={item.image}
+                  alt="main Recipe"
+                  className="HomeCardMainImage"
+                  onClick={() => handleRecipeClick(index)}
+                />
               </div>
-            ))}
-          </div>
-        )}
-      </section>
-    </>
+              <div className="HomeCardDescription">
+                <h3>Description: </h3>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
   );
 }
 
