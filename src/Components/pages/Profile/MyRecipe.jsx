@@ -90,7 +90,7 @@ function MyRecipes() {
         nodeRef={nodeRef}
       >
         <div ref={nodeRef} className="Popup profileCard">
-          <div className="RecipeCArd">
+          <div className="RecipeCArd PRecipeCArd">
             <img
               src={selectedRecipe?.image}
               alt="Card"

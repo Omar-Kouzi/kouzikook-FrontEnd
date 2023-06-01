@@ -80,7 +80,7 @@ function Signup() {
           <h1 className="Signuptitle">Sign up</h1>
           {valid ? <i className="ErrorMessageSignup">{error}</i> : null}
 
-          <form action="#" className="SignupForm">
+          <form action="#" className="SignupForm" onSubmit={handleSignUp}>
             <div className="SignupInputs">
               <div className="input-field">
                 <input
@@ -135,7 +135,6 @@ function Signup() {
                 type="submit"
                 value="Sign Up"
                 className="btn solid SignupButton"
-                onClick={handleSignUp}
               />
               <p>
                 Already have an account?

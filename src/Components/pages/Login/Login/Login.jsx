@@ -94,7 +94,7 @@ function Login() {
           <div className="LoginInputs">
             <div className="input-field">
               <input
-                type="text"
+                type="email"
                 id="email"
                 placeholder="Enter your email address"
                 className="Logininput"

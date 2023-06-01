@@ -258,7 +258,10 @@
   }
   .RecipeCArd {
     height: 89vh;
+  } .PRecipeCArd {
+    height: 50vh;
   }
+
   .RecipeCardPopImage {
     height: 88.8vh;
   }

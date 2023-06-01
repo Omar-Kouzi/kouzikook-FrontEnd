@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Search.css";
 
 function Search() {
-  const [userQuery, setUserQuery] = useState("");
-  const [recipeQuery, setRecipeQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [users, setUsers] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const navigate = useNavigate();
@@ -41,18 +40,13 @@ function Search() {
       <header className="SearchSectionHeader">
         <input
           type="text"
-          placeholder="@ UserName"
-          onChange={(e) => setUserQuery(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="@ RecipeName"
-          onChange={(e) => setRecipeQuery(e.target.value)}
+          placeholder="Search for users or recipes..."
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
       </header>
       <div className="searchContainer">
         {(users
-          .filter((user) => user.name.toLowerCase().includes(userQuery.toLowerCase()) && recipeQuery === "")
+          .filter((user) => user.name.toLowerCase().includes(searchQuery.toLowerCase()))
           .map((user, index) => (
             <div key={index}>
               <hr />
@@ -66,7 +60,7 @@ function Search() {
             </div>
           ))) || <div>No users found.</div>}
         {(recipes
-          .filter((recipe) => recipe.title.toLowerCase().includes(recipeQuery.toLowerCase()) && userQuery === "")
+          .filter((recipe) => recipe.title.toLowerCase().includes(searchQuery.toLowerCase()))
           .map((recipe, index) => (
             <div key={index}>
               <hr />

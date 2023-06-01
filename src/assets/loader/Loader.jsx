@@ -2,7 +2,7 @@ import loader from "../cookieLogo.png";
 import "./loader.css"
 function Loader() {
   return (
-    <div class="loader">
+    <div className="loader">
       <img src={loader} alt="" />
     </div>
   );
