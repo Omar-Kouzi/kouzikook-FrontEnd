@@ -39,6 +39,7 @@ function Profile() {
         );
         setUserData(response.data);
         setFollowingnum(response.data.following.length);
+        console.log(response.data.following)
         setFollowersNUm(response.data.followers.length);
       } catch (err) {
         console.log("Err", err);
