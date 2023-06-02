@@ -65,7 +65,7 @@
 @media only screen and (max-width: 950px) {
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     .NavigatorBar {
-      margin-bottom: 0vh;
+      margin-bottom: 1vh;
     }
   }
   .NavigatorBar {
