@@ -94,6 +94,7 @@
 @media only screen and (max-width: 950px) {
   .MyRecipeProfileSectiom {
     width: 700px;
+    height: 30vh;
   }
   
 }
