@@ -102,7 +102,7 @@ function CreateRecipe() {
           onChange={handleChange}
           value={formData.title}
           required
-          maxLength="25"
+          maxLength="12"
         />
         <label htmlFor="description">Description:</label>
         <input

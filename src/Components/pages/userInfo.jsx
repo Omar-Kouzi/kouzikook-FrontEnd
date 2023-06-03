@@ -87,6 +87,7 @@ function UserInfo() {
       console.error(error);
     }
   };
+
   return (
     <section>
       <div className="UserCArd">
@@ -108,10 +109,10 @@ function UserInfo() {
               ))}
           </header>
           <hr />
-          {recipes.length > 0 ? (
+          {recipes.filter(recipe => recipe.approved).length > 0 ? (
             <div className="RecipeHomePopupCards">
               {recipes
-                .filter((item) => item.user === userId.userId)
+                .filter((item) => item.user === userId.userId && item.approved)
                 .map((recipe, index) => (
                   <div key={index} className="RecipeHomePopupCard">
                     <img
