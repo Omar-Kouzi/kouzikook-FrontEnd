@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./RecipeCreate.css";
 import { useNavigate } from "react-router-dom";
@@ -54,7 +54,9 @@ function CreateRecipe() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("https://kouzi-kook-backend.onrender.com/category");
+        const res = await axios.get(
+          "https://kouzi-kook-backend.onrender.com/category"
+        );
         const sortedCategories = res.data.categories.sort((a, b) =>
           a.title.localeCompare(b.title)
         );
@@ -91,6 +93,41 @@ function CreateRecipe() {
 
   return (
     <section className="RecipeCreateSection">
+     <div class="RecipeDropdown">
+  <a href="#" class="RecipeButton">Recipe Tips</a>
+  <div class="RecipeContent">
+    <h1> Tips </h1>
+    <p>
+      So you can provide one of the most understanding and easy to read Recipes.
+    </p>
+    <h3>Title</h3>
+    <p style={{ border: "1px solid", padding: "4px" }}>
+      For the title just put the name of the plate/spice/sauce...
+    </p>
+
+    <h3>Description</h3>
+
+    <p style={{ border: "1px solid", padding: "4px" }}>
+      Some keywords for your description are 'Spicy' 'Sour' 'Sweet' 'Hot'
+      'Cold' 'Savory' 'Tangy' 'Bitter' 'Umami' 'Zesty' 'Rich' 'Creamy'
+      'Smoky' 'Tart' 'Mild' 'Fresh' 'Robust' 'Aromatic' 'Bold' 'Nutty'
+      'Fruity' 'Succulent' 'Juicy' 'Crispy' "
+    </p>
+    <h3>Ingredients</h3>
+
+    <p style={{ border: "1px solid", padding: "4px" }}>
+      Separate the ingredients with a semi-colon ';' and don't forget to put
+      the measurements in square brackets []. Without the semi-colon your
+      ingredients will be on the same bullet point.
+    </p>
+    <h3>Steps</h3>
+
+    <p style={{ border: "1px solid", padding: "4px" }}>
+      Let your steps be clear and understandable.
+    </p>
+  </div>
+</div>
+
       <form onSubmit={handleSubmit}>
         <h1>Post a Recipe</h1>
         <label htmlFor="title">Title:</label>
@@ -171,40 +208,6 @@ function CreateRecipe() {
           {isSubmitting ? "Creating Recipe..." : "Create Recipe"}
         </button>
       </form>
-      <div className="DemoRecipe">
-        <h1> Tips </h1>
-        <p>
-          So you can provide one of the most understanding and easy to read
-          Recipes.
-        </p>
-        <h4>Title</h4>
-        <textarea
-          type="text"
-          value="For the title just put the name of the plate/spice/sauce..."
-          readOnly
-        />
-        <h4>Description</h4>
-
-        <textarea
-          type="text"
-          value="Some keywords for your description are 'Spicy' 'Sour' 'Sweet' 'Hot' 'Cold' 'Savory' 'Tangy' 'Bitter' 'Umami' 'Zesty' 'Rich' 'Creamy' 'Smoky' 'Tart' 'Mild' 'Fresh' 'Robust' 'Aromatic' 'Bold' 'Nutty' 'Fruity' 'Succulent' 'Juicy' 'Crispy'  "
-          readOnly
-        />
-        <h4>Ingredients</h4>
-
-        <textarea
-          type="text"
-          value="Separate the ingredients with a semi-colon ';' and don't forget to put the measurements in square brackets []. Without the semi-colon your ingredients will be on the same bullet point."
-          readOnly
-        />
-        <h4>Steps</h4>
-
-        <textarea
-          type="text"
-          value="Let your steps be clear and understandable."
-          readOnly
-        />
-      </div>
     </section>
   );
 }

@@ -87,7 +87,10 @@ function UserInfo() {
       console.error(error);
     }
   };
-
+  const handleRecipeClick = (index) => {
+    const recipeId = recipes[index]._id;
+    navigate(`/recipe/${recipeId}`);
+  };
   return (
     <section>
       <div className="UserCArd">
@@ -114,7 +117,7 @@ function UserInfo() {
               {recipes
                 .filter((item) => item.user === userId.userId && item.approved)
                 .map((recipe, index) => (
-                  <div key={index} className="RecipeHomePopupCard">
+                  <div key={index} className="RecipeHomePopupCard" onClick={() => handleRecipeClick(index)}>
                     <img
                       src={recipe.image}
                       alt=""

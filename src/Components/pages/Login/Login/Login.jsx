@@ -81,7 +81,6 @@ function Login() {
       <div className="Loginbox">
         <div className="Logotitle">
           <NavLink to="/" className="logo loginLogo">
-            {" "}
             <img src={logo} alt="" className=" loginLogo logo" />
           </NavLink>
           <h1 className="Logintitle">Login</h1>

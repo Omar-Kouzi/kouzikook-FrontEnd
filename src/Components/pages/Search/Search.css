@@ -21,7 +21,7 @@
 }
 .searchContainer {
   overflow-y: scroll;
-  height: 500px;
+  height: 650px;
 }
 .searchContainer::-webkit-scrollbar {
   display: none;
@@ -34,9 +34,7 @@
 .searchUserContainer:hover {
   cursor: pointer;
 }
-/* .searchUser{
-  padding: 5px;
-} */
+
 .searchUserImage {
   width: 50px;
   height: 50px;

@@ -73,6 +73,13 @@
   height: 220px;
   background-color: rgba(255, 255, 255, 0.5);
 }
+.signuptitle {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
 .SignupButton-txt {
   display: flex;
   flex-direction: column;
@@ -123,15 +130,17 @@
     width: 300px;
   }
   .ErrorMessageSignup {
-   
     margin-top: 152px;
-  margin-left: 0px;
-}
-.SignupLogo {
-  width: 170px;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
+    margin-left: 0px;
+  }
+  .SignupLogo {
+    width: 170px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .signuptitle {
+    height: 300px;
+  }
 }
 
 @media only screen and (max-width: 340px) {

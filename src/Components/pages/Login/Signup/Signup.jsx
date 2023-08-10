@@ -71,13 +71,15 @@ function Signup() {
 
   return (
     <div className="Signup">
-      <div className="Signupbox">
+      {/* <div className="Signupbox"> */}
         <div className="SignupFormBox">
+          <div className="signuptitle">
           <NavLink to="/" className="logo SignupLogo">
             <img src={logo} alt="" className="logo SignupLogo" />
           </NavLink>
-
           <h1 className="Signuptitle">Sign up</h1>
+          </div>
+          
           {valid ? <i className="ErrorMessageSignup">{error}</i> : null}
 
           <form action="#" className="SignupForm" onSubmit={handleSignUp}>
@@ -120,14 +122,10 @@ function Signup() {
                   type="file"
                   id="file"
                   name="Image"
-                  // style={{ display: "none" }}
                   className="Signupinput"
                   onChange={handleImageChange}
                   required
                 />
-                {/* <label htmlFor="file" className=" Signupinput">
-                  Profile Picture
-                </label> */}
               </div>
             </div>
             <div className="SignupButton-txt">
@@ -146,7 +144,7 @@ function Signup() {
             </div>
           </form>
         </div>
-      </div>
+  
     </div>
   );
 }
