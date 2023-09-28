@@ -88,10 +88,10 @@ function Profile() {
         </div>
       </header>
       <nav className="ProfileNavigator">
-        <a onClick={() => setShowMyRecipes(true)}>Recipes</a>
-        <a onClick={() => setShowMyRecipes(false)} style={{ display: "none" }}>
+        <p onClick={() => setShowMyRecipes(true)}>Recipes</p>
+        <p onClick={() => setShowMyRecipes(false)} style={{ display: "none" }}>
           Saved
-        </a>
+        </p>
       </nav>
       {showMyRecipes ? <MyRecipes /> : <SavedRecipe />}
     </section>

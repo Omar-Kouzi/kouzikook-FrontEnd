@@ -94,7 +94,7 @@ function CreateRecipe() {
   return (
     <section className="RecipeCreateSection">
      <div class="RecipeDropdown">
-  <a href="#" class="RecipeButton">Recipe Tips</a>
+  <p class="RecipeButton">Recipe Tips</p>
   <div class="RecipeContent">
     <h1> Tips </h1>
     <p>

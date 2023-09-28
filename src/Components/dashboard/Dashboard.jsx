@@ -7,11 +7,11 @@ function Dashboard() {
   useEffect(() => {
     if (
       !sessionStorage.getItem("token") ||
-      sessionStorage.getItem("isAdmin") == "false"
+      sessionStorage.getItem("isAdmin") === "false"
     ) {
       navigate("/Login");
     }
-  }, []);
+  });
 
   return (
     <section className="DashboardPage">

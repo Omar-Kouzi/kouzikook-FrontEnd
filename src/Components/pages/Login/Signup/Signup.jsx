@@ -67,7 +67,7 @@ function Signup() {
         setValid(false);
       }, 4000);
     }
-  }, []);
+  });
 
   return (
     <div className="Signup">
