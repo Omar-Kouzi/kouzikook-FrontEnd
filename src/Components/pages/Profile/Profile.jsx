@@ -27,7 +27,7 @@ function Profile() {
     if (!sessionStorage.getItem("token")) {
       navigate("/Login");
     }
-  }, []);
+  });
 
   // fetching the user
   useEffect(() => {
