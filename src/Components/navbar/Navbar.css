@@ -41,6 +41,7 @@
   justify-content: space-around;
   height: 100vh;
   background-color: #fff;
+  border-bottom: 2px double;
 }
 
 .PageRoutes {
@@ -63,7 +64,6 @@
 }
 
 @media only screen and (max-width: 950px) {
- 
   .NavigatorBar {
     flex-direction: row;
     min-height: 80px;
@@ -80,7 +80,7 @@
 
   .PageNavigator {
     flex-direction: row;
-    width: 60vh;
+    width: 55vh;
     justify-content: center;
     height: 80px;
     align-items: center;
@@ -97,13 +97,13 @@
 
 @media only screen and (max-width: 500px) {
   .PageNavigator {
-    width: 95vw;
+    width: 90vw;
     gap: 10px;
   }
 }
 @media only screen and (max-width: 360px) {
   .PageNavigator {
-    width: 40vh;
-    gap: 5px;
+    width: 32vh;
+    gap: 19px;
   }
 }

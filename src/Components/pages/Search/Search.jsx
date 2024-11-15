@@ -20,7 +20,7 @@ function Search() {
         setRecipes(recipesResponse.data);
       } catch (err) {
         console.log("Err", err);
-      }
+    }
     }
     fetchUsersAndRecipes();
   }, []);

@@ -5,6 +5,7 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 90 90'%3E%3Ccircle fill-opacity='0.1' fill='%23000' cx='45' cy='45' r='12'/%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='0' cy='90' r='8'/%3E%3Ccircle cx='90' cy='90' r='8'/%3E%3Ccircle cx='90' cy='0' r='8'/%3E%3Ccircle cx='0' cy='0' r='8'/%3E%3C/g%3E%3C/svg%3E"); */
   height: 100vh;
   width: 100vw;
+  border: 1px solid;
 }
 
 .HomeMainSlider {
@@ -205,14 +206,14 @@
 }
 @media only screen and (max-width: 1450px) {
   .HomeMainSlider {
-    height: 750px;
+    height: 760px;
     width: 70.2vw;
     display: grid;
     grid-template-columns: auto;
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-x: auto;
-    margin: auto;
+    /* margin: auto; */
   }
   .Popup {
     width: 76.6vw;
@@ -240,18 +241,15 @@
 }
 @media only screen and (max-width: 950px) {
   .HomeMainSlider {
-    height: 85vh;
+    height: 86vh;
     width: 70.2vw;
     display: grid;
     grid-template-columns: auto;
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-x: auto;
-    margin: auto;
   }
-  .HomePage {
-    height: 100vh;
-  }
+
   .Popup {
     height: 88.8vh;
     width: 100vw;

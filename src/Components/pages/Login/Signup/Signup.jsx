@@ -61,9 +61,9 @@ function Signup() {
     SetImagee(e.target.files[0]);
   };
   useEffect(() => {
-    let timer;
+
     if (valid) {
-      timer = setTimeout(() => {
+     setTimeout(() => {
         setValid(false);
       }, 4000);
     }
